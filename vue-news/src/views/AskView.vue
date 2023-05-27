@@ -1,22 +1,38 @@
 <template>
   <div>
-    <div v-for="item in this.ask" :key="item.id">{{item.title}}</div>
+    <p v-for="item in fetchedAsk" v-bind:key="item.id">
+      <a :href="item.url">{{item.title}}</a>
+      <small>{{item.time_ago}} by {{item.user}}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetcAskList } from '../api/index'
+// import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
-  data() {
-    return {
-      ask: []
-    }
+  computed: {
+    // # 3-1
+    ...mapGetters(['fetchedAsk'])
+
+    // # 3-2 (해당 컴포넌트의 변수명이 다른 경우)
+    // ...mapGetters({
+    //   ask : 'fetchedAsk' // 컴포넌트사용변수명 : store getters 명
+    // })
+
+    // # 2
+    // ...mapState({
+    //   ask : state => state.ask
+    // })
+
+    // # 1
+    // ask() {
+    //   return this.$store.state.ask;
+    // }
   },
   created() {
-    fetcAskList()
-      .then(response => this.ask = response.data)
-      .catch(error => console.log(error))
+    this.$store.dispatch('FETCH_ASK');
   }
 }
 </script>

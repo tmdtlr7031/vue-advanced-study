@@ -6,3 +6,6 @@
     - 하지만 데이터 요청 + DOM에 접근이 필요하면 ```mounted``` 사용
     - https://www.inflearn.com/questions/404907
 - 참고 : https://vuejs.org/guide/extras/reactivity-in-depth.html
+
+## Vue Destructureing
+- https://joshua1988.github.io/es6-online-book/destructuring.html

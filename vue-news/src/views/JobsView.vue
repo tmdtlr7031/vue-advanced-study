@@ -1,22 +1,17 @@
 <template>
   <div>
-    <div v-for="job in this.jobs" :key="job.id">{{job.title}}</div>
+    <p v-for="job in $store.state.jobs" :key="job.id">
+      <a :href="job.url">{{job.title}}</a>
+      <small>{{job.domain}}, {{job.time_ago}}</small>
+    </p>
   </div>
 </template>
 
 <script>
-import { fetcJobsList } from '../api/index'
 
 export default {
-  data() {
-    return {
-      jobs: []
-    }
-  },
   created() {
-    fetcJobsList()
-      .then(response => this.jobs = response.data)
-      .catch(error => console.log(error))
+    this.$store.dispatch('FETCH_JOBS');
   }
 }
 </script>
