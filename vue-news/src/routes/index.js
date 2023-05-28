@@ -29,11 +29,11 @@ export const router = new VueRouter({
             component: JobsView,
         },
         {
-            path: '/item',
+            path: '/item/:id',
             component: ItemView,
         },
         {
-            path: '/user',
+            path: '/user/:id', // 동적라우트
             component: UserView,
         }
     ]

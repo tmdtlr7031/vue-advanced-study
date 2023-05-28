@@ -9,3 +9,12 @@
 
 ## Vue Destructureing
 - https://joshua1988.github.io/es6-online-book/destructuring.html
+
+## 내용에 태그있는경우 escapeXml 효과
+- ```javascript
+    <div v-html="fetchedItem.content"></div>
+  ```
+
+
+## Vue.js API
+- https://vuejs.org/api/#v-html
