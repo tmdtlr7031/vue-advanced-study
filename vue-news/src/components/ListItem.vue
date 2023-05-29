@@ -41,19 +41,6 @@ export default {
         }
         return '';
     }
-  },  
-  created() {
-    // this.$route.path 써도 무방
-    const name = this.$route.name;
-    let callName = '';
-    if (name == 'news') {
-        callName = 'FETCH_NEWS';
-    }else if (name == 'ask') {
-        callName = 'FETCH_ASK';
-    } else if (name == 'jobs') {
-        callName = 'FETCH_JOBS';
-    }
-    this.$store.dispatch(callName);
   }
 }
 </script>
