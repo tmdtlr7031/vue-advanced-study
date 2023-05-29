@@ -5,19 +5,14 @@
 </template>
 
 <script>
-import ListItem from '../components/ListItem.vue';
-import bus from '../utils/bus'
+import ListItem from '../components/ListItem.vue'
+import ListMixin from '../mixins/ListMixin'
 
 export default {
   components: { 
     ListItem 
   },
-  created() {
-    bus.$emit('start:spinner');
-    this.$store.dispatch('FETCH_JOBS')
-      .then(()=> bus.$emit('end:spinner'))
-      .catch((error) => console.log(error));  
-    
-  }
+  mixins: [ListMixin]
+  
 }
 </script>

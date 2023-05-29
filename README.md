@@ -53,7 +53,7 @@
         - h는 컴포넌트나 엘리먼트를 그려주는 API
         - https://www.inflearn.com/questions/575820
     
-## 하이 오더 컴포넌트
+## 하이 오더 컴포넌트 (HOC)
 - 컴포넌트의 로직을 재사용하기 위한 기술
 - 그냥 공통의 vue 컴포넌트 만드는 것과 무슨 차이야?
     - 생성하는 시점에 원하는 값들을 파라미터로 넘겨서 컴포넌트의 내부 구조를 정의할 수 있는 장점
@@ -64,6 +64,11 @@
 ## Mixins
 - 여러 컴포넌트 간에 공통으로 사용하는 로직, 기능들을 재사용하는 방법으로 data, methods, created 등과 같은 컴포넌트 옵션을 정의할 수 있다.
 
+## HOC / Mixins
+- 둘 다 쓰면 안돼나?
+    - 혼용해도 상관없으나 차이점 알고 쓰자
+    - https://www.inflearn.com/questions/33592
+    - ```Vue 3``` 에선 ```composition api```참고 해보고 ```setup```참고 해보자!
 
 ## Vue.js 라이프사이클
 - https://beomy.tistory.com/47
